@@ -30,10 +30,19 @@ export default authMiddleware({
 
     const res = NextResponse.next();
 
+    res.headers.append(
+      "Access-Control-Allow-Origin",
+      `${process.env.NEXT_PUBLIC_API_URL}`
+    );
+    res.headers.append(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PATCH, PUT, DELETE"
+    );
+
     return res;
   },
 });
 
 export const config = {
-  matcher: ["/((?!.+.[w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
 };

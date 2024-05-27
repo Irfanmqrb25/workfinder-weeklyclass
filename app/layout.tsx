@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "WorkFinder",
@@ -19,7 +20,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={cn("bg-[#F7F7FB]", font.className)}>{children}</body>
+        <body className={cn("bg-[#F7F7FB]", font.className)}>
+          <Toaster />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );

@@ -1,13 +1,12 @@
-import React from "react";
+interface BodyJobDetailProps {
+  description: string;
+}
 
-const BodyJobDetail = () => {
+const BodyJobDetail = ({ description }: BodyJobDetailProps & {}) => {
   return (
     <div className="space-y-5">
       <h2 className="font-bold text-2xl">Job Description</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+      <p>{description}</p>
     </div>
   );
 };
