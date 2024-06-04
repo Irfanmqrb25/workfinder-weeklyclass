@@ -118,7 +118,11 @@ const HeaderJobDetail = ({ job }: HeaderJobDetailProps) => {
         </p>
         {userId === job.userId ? (
           <div className="flex items-center gap-3 justify-end">
-            <Button variant="brand" size="icon">
+            <Button
+              variant="brand"
+              size="icon"
+              onClick={() => router.push(`/jobs/edit/${job.id}`)}
+            >
               <Pen />
             </Button>
             <Button

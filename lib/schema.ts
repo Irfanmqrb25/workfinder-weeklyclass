@@ -25,3 +25,14 @@ export const CreateFormSchema = z.object({
   image: z.string().min(1),
   company: z.string().min(1).max(20),
 });
+
+export const EditFormSchema = z.object({
+  title: z.string().min(1).max(100),
+  status: z.string(),
+  category: z.string(),
+  location: z.string().min(1).max(50),
+  salary: z.coerce.number().min(1),
+  description: z.string().min(1).max(300),
+  image: z.string().min(1),
+  company: z.string().min(1).max(20),
+});
